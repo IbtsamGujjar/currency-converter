@@ -14,7 +14,7 @@ const screen = Dimensions.get('window');
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: Colors.blue,
+    backgroundColor: Colors.grey,
     justifyContent: 'center',
   },
   logoContainer: {
