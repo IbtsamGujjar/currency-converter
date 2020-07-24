@@ -43,11 +43,15 @@ export const Input = ({
   value,
   buttonText,
   keyboardType,
+  editable,
   onPress,
   onChangeText,
 }) => {
+  const containerStyles = !editable
+    ? { ...styles.container, backgroundColor: Colors.disabled }
+    : styles.container;
   return (
-    <View style={styles.container}>
+    <View style={containerStyles}>
       <TouchableOpacity style={styles.button} onPress={onPress}>
         <Text style={styles.buttonText}>{buttonText}</Text>
       </TouchableOpacity>
@@ -56,6 +60,7 @@ export const Input = ({
         keyboardType={keyboardType}
         onChangeText={onChangeText}
         value={value}
+        editable={editable}
       />
     </View>
   );
@@ -64,6 +69,7 @@ export const Input = ({
 Input.defaultProps = {
   value: '',
   buttonText: 'USD',
+  editable: true,
   keyboardType: 'number-pad',
   onPress: () => {},
   onChangeText: () => {},
@@ -73,6 +79,7 @@ Input.propTypes = {
   value: PropTypes.string,
   keyboardType: PropTypes.string,
   buttonText: PropTypes.string,
+  editable: PropTypes.bool,
   onPress: PropTypes.func,
   onChangeText: PropTypes.func,
 };
