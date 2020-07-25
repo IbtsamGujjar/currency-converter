@@ -5,4 +5,7 @@ export const Colors = {
   textLight: '#797979',
   border: '#e2e2e2',
   disabled: '#f0f0f0',
+  orange: '#d57a66',
+  green: '#00bd9d',
+  purple: '#9e768f',
 };
