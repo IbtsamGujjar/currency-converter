@@ -1,13 +1,13 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { Home } from '../App/screens/Home';
 import { Options } from '../App/screens/Options';
 import { CurrencyList } from '../App/screens/CurrencyList';
 import { Themes } from '../App/screens/Themes';
+import { Login } from '../App/screens/Login';
 
 const MainStack = createStackNavigator();
 
@@ -28,7 +28,7 @@ export const MainStackScreen = () => {
 };
 
 const ModalStack = createStackNavigator();
-const ModalStackScreen = () => {
+export const ModalStackScreen = () => {
   return (
     <ModalStack.Navigator mode="modal">
       <ModalStack.Screen
@@ -56,10 +56,16 @@ const ModalStackScreen = () => {
   );
 };
 
-export const Navigation = () => {
+const AuthStackNavigator = createStackNavigator();
+
+export const AuthNavigator = () => {
   return (
-    <NavigationContainer>
-      <ModalStackScreen />
-    </NavigationContainer>
+    <AuthStackNavigator.Navigator>
+      <AuthStackNavigator.Screen
+        name="Auth"
+        component={Login}
+        options={{ headerShown: false }}
+      />
+    </AuthStackNavigator.Navigator>
   );
 };
