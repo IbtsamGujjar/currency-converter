@@ -10,7 +10,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const KeyboardSpacer = ({ style, onToggle }) => {
+const KeyboardSpacer = ({
+  style,
+  onToggle,
+  keyboardDidShow,
+  keyboardDidHide,
+}) => {
   const [keyboardSpace, setKeyboardSpace] = useState(0);
 
   useEffect(() => {
@@ -23,6 +28,7 @@ const KeyboardSpacer = ({ style, onToggle }) => {
       const newKeyboardSpace = screenHeight - event.endCoordinates.screenY;
       setKeyboardSpace(newKeyboardSpace);
       onToggle(true, newKeyboardSpace);
+      keyboardDidShow();
     };
     // prettier-ignore
     const showEvt = Platform.OS === 'android' ? 'keyboardDidShow' : 'keyboardWillShow';
@@ -31,6 +37,7 @@ const KeyboardSpacer = ({ style, onToggle }) => {
     const resetKeyboardSpace = () => {
       setKeyboardSpace(0);
       onToggle(false, 0);
+      keyboardDidHide();
     };
     // prettier-ignore
     const hideEvt = Platform.OS === 'android' ? 'keyboardDidHide' : 'keyboardWillHide';
@@ -48,11 +55,15 @@ const KeyboardSpacer = ({ style, onToggle }) => {
 KeyboardSpacer.defaultProps = {
   style: {},
   onToggle: () => {},
+  keyboardDidHide: () => {},
+  keyboardDidShow: () => {},
 };
 
 KeyboardSpacer.propTypes = {
   style: PropTypes.objectOf(PropTypes.any),
   onToggle: PropTypes.func,
+  keyboardDidHide: PropTypes.func,
+  keyboardDidShow: PropTypes.func,
 };
 
 export { KeyboardSpacer };
