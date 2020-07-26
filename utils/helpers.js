@@ -1,4 +1,5 @@
 import { Linking, Alert } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 export const openExternalLink = (url) => {
   Linking.openURL(url).catch(() => {
@@ -6,4 +7,13 @@ export const openExternalLink = (url) => {
       { text: 'OK', style: 'default' },
     ]);
   });
+};
+
+export const saveDataToStorage = (userEmail) => {
+  AsyncStorage.setItem(
+    'userData',
+    JSON.stringify({
+      userEmail,
+    })
+  );
 };
