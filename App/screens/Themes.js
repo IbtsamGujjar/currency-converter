@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StatusBar, ScrollView, View, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
+import { StatusBar, ScrollView } from 'react-native';
+import styled from 'styled-components/native';
 
 import { Row } from '../components/Row/Row';
 import { Divider } from '../components/Divider/Divider';
@@ -8,17 +10,18 @@ import { Divider } from '../components/Divider/Divider';
 import { Colors } from '../../constants/colors';
 import themes from '../../data/themes.json';
 
-const styles = StyleSheet.create({
-  icon: {
-    width: 30,
-    height: 30,
-    borderRadius: 20,
-  },
-});
+import { changeThemeColor } from '../../store/actions/theme';
 
-const Themes = ({ navigation }) => {
+const Icon = styled.View`
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: ${(props) => props.bgColor || Colors.grey};
+`;
+
+const ThemesScreen = ({ navigation, changeThemeColor }) => {
   const onPress = (color) => {
-    console.log('COLOR', color);
+    changeThemeColor(color);
     navigation.popToTop();
   };
   return (
@@ -31,10 +34,7 @@ const Themes = ({ navigation }) => {
               <Row
                 title={theme.name}
                 onPress={() => onPress(Colors[theme.value])}
-                icon={
-                  // prettier-ignore
-                  <View style={[styles.icon, { backgroundColor: Colors[theme.value] }]} />
-                }
+                icon={<Icon bgColor={Colors[theme.value]} />}
               />
               <Divider />
             </React.Fragment>
@@ -45,12 +45,20 @@ const Themes = ({ navigation }) => {
   );
 };
 
-Themes.defaultProps = {
+ThemesScreen.defaultProps = {
+  changeThemeColor: () => {},
   navigation: {},
 };
 
-Themes.propTypes = {
+ThemesScreen.propTypes = {
+  changeThemeColor: PropTypes.func,
   navigation: PropTypes.objectOf(PropTypes.any),
 };
+
+const mapDispatchToProps = {
+  changeThemeColor,
+};
+
+const Themes = connect(null, mapDispatchToProps)(ThemesScreen);
 
 export { Themes };
