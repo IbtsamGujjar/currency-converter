@@ -9,7 +9,8 @@
     "format": "prettier \"App/**/*.{js,html}\" --write",
     "lint": "eslint \"App/**/*.{js,jsx}\" --quiet",
     "storybook": "start-storybook -p 7007",
-    "prestorybook": "rnstl"
+    "prestorybook": "rnstl",
+    "test": "jest"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.11.0",
@@ -50,10 +51,20 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
+    "jest": "^26.1.0",
+    "jest-expo": "^38.0.2",
     "prettier": "^2.0.5",
-    "react-native-storybook-loader": "^2.0.2"
+    "react-native-storybook-loader": "^2.0.2",
+    "react-native-testing-library": "^2.1.1",
+    "react-test-renderer": "^16.13.1"
   },
   "private": true,
+  "jest": {
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base)"
+    ]
+  },
   "config": {
     "react-native-storybook-loader": {
       "searchDir": [
