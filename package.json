@@ -7,7 +7,9 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "format": "prettier \"App/**/*.{js,html}\" --write",
-    "lint": "eslint \"App/**/*.{js,jsx}\" --quiet"
+    "lint": "eslint \"App/**/*.{js,jsx}\" --quiet",
+    "storybook": "start-storybook -p 7007",
+    "prestorybook": "rnstl"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.11.0",
@@ -34,7 +36,13 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/react-native": "^5.3.19",
+    "@storybook/react-native-server": "^5.3.19",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
     "babel-preset-expo": "~8.1.0",
     "eslint": "^7.5.0",
     "eslint-config-airbnb": "^18.2.0",
@@ -42,7 +50,16 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "react-native-storybook-loader": "^2.0.2"
   },
-  "private": true
+  "private": true,
+  "config": {
+    "react-native-storybook-loader": {
+      "searchDir": [
+        "./App"
+      ],
+      "pattern": "**/*.stories.js"
+    }
+  }
 }
