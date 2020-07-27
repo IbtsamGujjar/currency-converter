@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Provider } from 'react-redux';
 import { AppLoading } from 'expo';
 import { useFonts } from 'expo-font';
 
 import { AppNavigator } from './navigation/AppNavigator';
+import Storybook from './storybook';
 
 import { store } from './store/store';
 
@@ -26,3 +28,6 @@ const App = () => {
 };
 
 export default App;
+
+// Storybook
+// export default Storybook;
