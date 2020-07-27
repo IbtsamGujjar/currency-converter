@@ -24,9 +24,9 @@ const styles = StyleSheet.create({
   },
 });
 
-const Button = ({ btnText, onPress }) => {
+const Button = ({ btnText, onPress, style }) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.button}>
+    <TouchableOpacity onPress={onPress} style={{ ...styles.button, ...style }}>
       <Image
         source={reverseImg}
         style={styles.buttonIcon}
@@ -39,11 +39,13 @@ const Button = ({ btnText, onPress }) => {
 
 Button.defaultProps = {
   btnText: 'Reverse Currencies',
+  style: {},
   onPress: () => {},
 };
 
 Button.propTypes = {
   btnText: PropTypes.string,
+  style: PropTypes.objectOf(PropTypes.any),
   onPress: PropTypes.func,
 };
 
