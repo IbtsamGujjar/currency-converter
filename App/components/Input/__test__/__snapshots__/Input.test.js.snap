@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Snapshot 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "borderRadius": 5,
+      "flexDirection": "row",
+      "marginHorizontal": 20,
+      "marginVertical": 10,
+    }
+  }
+>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderBottomLeftRadius": 5,
+        "borderRightColor": "#e2e2e2",
+        "borderRightWidth": 1,
+        "borderTopLeftRadius": 5,
+        "opacity": 1,
+        "padding": 15,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#4f6d7a",
+          "fontSize": 18,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      USD
+    </Text>
+  </View>
+  <TextInput
+    allowFontScaling={true}
+    editable={true}
+    keyboardType="number-pad"
+    onChangeText={[Function]}
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "color": "#797979",
+        "flex": 1,
+        "fontSize": 16,
+        "padding": 10,
+      }
+    }
+    underlineColorAndroid="transparent"
+    value=""
+  />
+</View>
+`;

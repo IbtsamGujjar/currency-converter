@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormInput Snapshot 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "fontFamily": "open-sans-bold",
+        "marginVertical": 8,
+      }
+    }
+  >
+    
+  </Text>
+  <TextInput
+    allowFontScaling={true}
+    autoCapitalize="none"
+    keyboardType="default"
+    onBlur={[Function]}
+    onChangeText={[Function]}
+    rejectResponderTermination={true}
+    secureTextEntry={false}
+    style={
+      Object {
+        "borderBottomColor": "#ccc",
+        "borderBottomWidth": 1,
+        "paddingHorizontal": 2,
+        "paddingVertical": 5,
+      }
+    }
+    underlineColorAndroid="transparent"
+    value=""
+  />
+</View>
+`;

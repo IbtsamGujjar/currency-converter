@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Snapshot 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "marginVertical": 20,
+      "opacity": 1,
+    }
+  }
+>
+  <Image
+    resizeMode="contain"
+    source={1}
+    style={
+      Object {
+        "height": 20,
+        "marginRight": 10,
+        "width": 20,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "color": "#fff",
+        "fontSize": 16,
+      }
+    }
+  >
+    Reverse Currencies
+  </Text>
+</View>
+`;
